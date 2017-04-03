@@ -5,10 +5,11 @@ php:
     - "5.4"
 
 before_install:
-    - composer selfupdate
+    # - composer selfupdate #seems tbd automatically
     - sudo apt-get update
-    - sudo apt-get install libssh2-1 libssh2-1-dev
-    - printf "\n" | pecl install ssh2 channel://pecl.php.net/ssh2-0.12
+    #- sudo apt-get install libssh2-1 libssh2-1-dev
+    #- printf "\n" | pecl install ssh2 channel://pecl.php.net/ssh2-0.13
+    - sudo apt-get install libssh2-php
 
 install: composer update --prefer-dist --no-interaction
 
